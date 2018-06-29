@@ -1,26 +1,28 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 namespace BlockHorizons\BlockSniper\tasks;
 
 use BlockHorizons\BlockSniper\Loader;
-use pocketmine\scheduler\PluginTask;
+use pocketmine\scheduler\Task;
 
-abstract class BaseTask extends PluginTask {
+abstract class BaseTask extends Task
+{
 
-	/** @var Loader */
-	protected $loader = null;
+    /** @var Loader */
+    protected $loader = null;
 
-	public function __construct(Loader $loader) {
-		parent::__construct($loader);
-		$this->loader = $loader;
-	}
+    public function __construct(Loader $loader)
+    {
+        $this->loader = $loader;
+    }
 
-	/**
-	 * @return Loader
-	 */
-	public function getLoader(): Loader {
-		return $this->loader;
-	}
+    /**
+     * @return Loader
+     */
+    public function getLoader(): Loader
+    {
+        return $this->loader;
+    }
 }
